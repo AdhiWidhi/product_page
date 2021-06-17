@@ -71,23 +71,18 @@ class _ProdukState extends State<Produk> {
                                     Text(
                                       x.data['data'][index]['nama'],
                                       style: GoogleFonts.poppins(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 15),
+                                          fontWeight: FontWeight.bold, fontSize: 15),
                                     ),
                                     Text(
-                                      "Rp. " +
-                                          x.data['data'][index]['harga']
-                                              .toString(),
+                                      "Rp. " + x.data['data'][index]['harga'].toString(),
                                       style: GoogleFonts.poppins(
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 12),
+                                          fontWeight: FontWeight.w400, fontSize: 12),
                                     ),
                                     SizedBox(
                                       height: 10,
                                     ),
                                     Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
+                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                       children: [
                                         InkWell(
                                           splashColor: Colors.white,
@@ -96,53 +91,38 @@ class _ProdukState extends State<Produk> {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        EditData(
-                                                            input:
-                                                                x.data['data']
-                                                                    [index])));
+                                                        EditData(input: x.data['data'][index])));
                                           },
                                           child: Container(
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: 32),
+                                            padding: EdgeInsets.symmetric(horizontal: 32),
                                             alignment: Alignment.center,
                                             decoration: BoxDecoration(
-                                                border: Border.all(
-                                                    color: Colors.blue),
-                                                borderRadius:
-                                                    BorderRadius.circular(5)),
+                                                border: Border.all(color: Colors.blue),
+                                                borderRadius: BorderRadius.circular(5)),
                                             child: Text("Ubah",
                                                 style: GoogleFonts.poppins(
-                                                    color: Colors.blue,
-                                                    fontSize: 13)),
+                                                    color: Colors.blue, fontSize: 13)),
                                           ),
                                         ),
                                         InkWell(
                                           onTap: () {
-                                            deleteData(x.data['data'][index]
-                                                        ['id']
-                                                    .toString())
+                                            deleteData(x.data['data'][index]['id'].toString())
                                                 .then((value) {
                                               setState(() {
-                                                ScaffoldMessenger.of(context)
-                                                    .showSnackBar(SnackBar(
-                                                        content: Text(
-                                                            "Data sudah berhasil di hapus")));
+                                                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                                    content: Text("Data sudah berhasil di hapus")));
                                               });
                                             });
                                           },
                                           child: Container(
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: 32),
+                                            padding: EdgeInsets.symmetric(horizontal: 32),
                                             alignment: Alignment.center,
                                             decoration: BoxDecoration(
-                                                border: Border.all(
-                                                    color: Colors.blue),
-                                                borderRadius:
-                                                    BorderRadius.circular(5)),
+                                                border: Border.all(color: Colors.blue),
+                                                borderRadius: BorderRadius.circular(5)),
                                             child: Text("Hapus",
                                                 style: GoogleFonts.poppins(
-                                                    color: Colors.blue,
-                                                    fontSize: 13)),
+                                                    color: Colors.blue, fontSize: 13)),
                                           ),
                                         ),
                                       ],
@@ -153,13 +133,11 @@ class _ProdukState extends State<Produk> {
                                         width: double.infinity,
                                         decoration: BoxDecoration(
                                             color: Colors.blue,
-                                            borderRadius:
-                                                BorderRadius.circular(5)),
+                                            borderRadius: BorderRadius.circular(5)),
                                         child: Text(
                                           "Tandai stok habis",
                                           style: GoogleFonts.poppins(
-                                              color: Colors.white,
-                                              fontSize: 14),
+                                              color: Colors.white, fontSize: 14),
                                         ))
                                   ],
                                 ),
