@@ -97,6 +97,7 @@ class _FormInputState extends State<FormInput> {
               Padding(
                 padding: EdgeInsets.only(top: 20, bottom: 20),
                 child: TextField(
+                  maxLength: 100,
                   controller: namaController,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(

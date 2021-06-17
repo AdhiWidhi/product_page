@@ -89,6 +89,7 @@ class EditData extends StatelessWidget {
                 padding: EdgeInsets.only(top: 20, bottom: 20),
                 child: TextField(
                   controller: namaController..text = input['nama'],
+                  maxLength: 100,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(borderRadius: BorderRadius.circular(10))),

@@ -21,8 +21,7 @@ class _FormInputJaketState extends State<FormInputJaket> {
   //membuat method POST untuk Upload data ke API
   Future saveUpload() async {
     // karena ingin menambahkan data/POST maka perlu tambahan body karena di body API kita akan menambahkan data object yang ditulis harus sama dengan yang ada di API
-    final response =
-        await http.post(Uri.parse("http://192.168.1.8:80/api/jakets"), body: {
+    final response = await http.post(Uri.parse("http://192.168.1.8:80/api/jakets"), body: {
       "nama": namaController.text,
       "warna": warnaController.text,
       "ukuran": ukuranController.text,
@@ -59,8 +58,7 @@ class _FormInputJaketState extends State<FormInputJaket> {
                       // ignore: deprecated_member_use
                       child: RaisedButton(
                           color: Colors.lightBlue.shade700,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15)),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
                           onPressed: () {
                             if (_formkey.currentState.validate()) {
                               saveUpload().then((value) {
@@ -75,9 +73,7 @@ class _FormInputJaketState extends State<FormInputJaket> {
                     ),
                     Align(
                       alignment: Alignment.center,
-                      child: Text("atau",
-                          style:
-                              GoogleFonts.poppins(color: Colors.grey.shade600)),
+                      child: Text("atau", style: GoogleFonts.poppins(color: Colors.grey.shade600)),
                     ),
                     SizedBox(
                         height: 35,
@@ -88,8 +84,7 @@ class _FormInputJaketState extends State<FormInputJaket> {
                           decoration: InputDecoration(
                             contentPadding: EdgeInsets.symmetric(vertical: 2),
                             hintText: "Ketik Image Url",
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10)),
+                            border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                           ),
                         )),
                   ],
@@ -104,9 +99,9 @@ class _FormInputJaketState extends State<FormInputJaket> {
                 child: TextField(
                   controller: namaController,
                   keyboardType: TextInputType.text,
+                  maxLength: 100,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10))),
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(10))),
                 ),
               ),
               Text("Harga Produk"),
@@ -116,8 +111,7 @@ class _FormInputJaketState extends State<FormInputJaket> {
                   controller: hargaController,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10))),
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(10))),
                 ),
               ),
               Text("Deskripsi"),
@@ -128,8 +122,7 @@ class _FormInputJaketState extends State<FormInputJaket> {
                   controller: desController,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10))),
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(10))),
                 ),
               ),
               Text("Ukuran"),
@@ -139,8 +132,7 @@ class _FormInputJaketState extends State<FormInputJaket> {
                   controller: ukuranController,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10))),
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(10))),
                 ),
               ),
               Text("Warna"),
@@ -150,8 +142,7 @@ class _FormInputJaketState extends State<FormInputJaket> {
                   controller: warnaController,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5))),
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(5))),
                 ),
               ),
               Padding(
@@ -167,8 +158,7 @@ class _FormInputJaketState extends State<FormInputJaket> {
                           textColor: Colors.blue,
                           child: Text(
                             'Batal',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w400, fontSize: 18),
+                            style: GoogleFonts.poppins(fontWeight: FontWeight.w400, fontSize: 18),
                           ),
                           onPressed: () {
                             Navigator.pop(context);
@@ -189,8 +179,7 @@ class _FormInputJaketState extends State<FormInputJaket> {
                           textColor: Colors.white,
                           child: Text(
                             'Tambahkan',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w400, fontSize: 18),
+                            style: GoogleFonts.poppins(fontWeight: FontWeight.w400, fontSize: 18),
                           ),
                           onPressed: () {
                             if (_formkey.currentState.validate()) {

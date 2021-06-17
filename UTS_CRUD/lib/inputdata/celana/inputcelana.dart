@@ -99,6 +99,7 @@ class _FormInputCelanaState extends State<FormInputCelana> {
                 child: TextField(
                   controller: namaController,
                   keyboardType: TextInputType.text,
+                  maxLength: 100,
                   decoration: InputDecoration(
                       border: OutlineInputBorder(borderRadius: BorderRadius.circular(10))),
                 ),

@@ -17,16 +17,15 @@ class EditTopi extends StatelessWidget {
 
   //membuat method POST untuk Upload data ke API
   Future updateKonten() async {
-    final response = await http.put(
-        Uri.parse("http://192.168.1.8:80/api/topis/" + input['id'].toString()),
-        body: {
-          "nama": namaController.text,
-          "warna": warnaController.text,
-          "ukuran": ukuranController.text,
-          "harga": hargaController.text,
-          "deskripsi": desController.text,
-          "gambar": gambarController.text,
-        });
+    final response = await http
+        .put(Uri.parse("http://192.168.1.8:80/api/topis/" + input['id'].toString()), body: {
+      "nama": namaController.text,
+      "warna": warnaController.text,
+      "ukuran": ukuranController.text,
+      "harga": hargaController.text,
+      "deskripsi": desController.text,
+      "gambar": gambarController.text,
+    });
     return jsonDecode(response.body);
   }
 
@@ -56,8 +55,7 @@ class EditTopi extends StatelessWidget {
                       // ignore: deprecated_member_use
                       child: RaisedButton(
                           color: Colors.lightBlue.shade700,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15)),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
                           onPressed: () {},
                           child: Text(
                             "Ambil dari Galeri",
@@ -66,9 +64,7 @@ class EditTopi extends StatelessWidget {
                     ),
                     Align(
                       alignment: Alignment.center,
-                      child: Text("atau",
-                          style:
-                              GoogleFonts.poppins(color: Colors.grey.shade600)),
+                      child: Text("atau", style: GoogleFonts.poppins(color: Colors.grey.shade600)),
                     ),
                     SizedBox(
                         height: 35,
@@ -79,8 +75,7 @@ class EditTopi extends StatelessWidget {
                           decoration: InputDecoration(
                             contentPadding: EdgeInsets.symmetric(vertical: 2),
                             hintText: "Ketik Image Url",
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10)),
+                            border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
                           ),
                         )),
                   ],
@@ -95,9 +90,9 @@ class EditTopi extends StatelessWidget {
                 child: TextField(
                   controller: namaController..text = input['nama'],
                   keyboardType: TextInputType.text,
+                  maxLength: 100,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10))),
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(10))),
                 ),
               ),
               Text("Harga Produk"),
@@ -107,8 +102,7 @@ class EditTopi extends StatelessWidget {
                   controller: hargaController..text = input['harga'].toString(),
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10))),
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(10))),
                 ),
               ),
               Text("Deskripsi"),
@@ -119,8 +113,7 @@ class EditTopi extends StatelessWidget {
                   controller: desController..text = input['deskripsi'],
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10))),
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(10))),
                 ),
               ),
               Text("Ukuran"),
@@ -130,8 +123,7 @@ class EditTopi extends StatelessWidget {
                   controller: ukuranController..text = input['ukuran'],
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10))),
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(10))),
                 ),
               ),
               Text("Warna"),
@@ -141,8 +133,7 @@ class EditTopi extends StatelessWidget {
                   controller: warnaController..text = input['warna'],
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5))),
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(5))),
                 ),
               ),
               Padding(
@@ -158,8 +149,7 @@ class EditTopi extends StatelessWidget {
                           textColor: Colors.blue,
                           child: Text(
                             'Batal',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w400, fontSize: 18),
+                            style: GoogleFonts.poppins(fontWeight: FontWeight.w400, fontSize: 18),
                           ),
                           onPressed: () {
                             Navigator.pop(context);
@@ -180,8 +170,7 @@ class EditTopi extends StatelessWidget {
                           textColor: Colors.white,
                           child: Text(
                             'Simpan',
-                            style: GoogleFonts.poppins(
-                                fontWeight: FontWeight.w400, fontSize: 18),
+                            style: GoogleFonts.poppins(fontWeight: FontWeight.w400, fontSize: 18),
                           ),
                           onPressed: () {
                             if (_formkey.currentState.validate()) {
@@ -190,9 +179,7 @@ class EditTopi extends StatelessWidget {
                                   context,
                                 );
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                        content: Text(
-                                            "Data sudah berhasil di ubah")));
+                                    SnackBar(content: Text("Data sudah berhasil di ubah")));
                               });
                             }
                           },
